@@ -99,10 +99,10 @@ public class SakilaAppApplication {
 	public @ResponseBody
 	List<Film> getByBudget(@PathVariable double budget) { return filmRepository.findByBudget(budget); }
 
-	@GetMapping("/getByCategory/{category}")
+	@GetMapping("/getByCategory/{id}")
 	public @ResponseBody
-	List<Film> getByCategory(@PathVariable String category){
-		return filmCategoryRepository.findByCategory(category);
+	Iterable<Film> getByCategory(@PathVariable Integer id){
+		return filmRepository.findByCategory(id);
 	}
 
 	//A change for a commit

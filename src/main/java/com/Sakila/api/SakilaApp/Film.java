@@ -40,11 +40,8 @@ public class Film {
     @Column(name = "category_id")
     int categoryId;
 
-    @OneToMany(mappedBy = "film")
-    Set<FilmCategories> category_Id;
-
-    @Column(name = "actors")
-    String film_actors;
+//    @Column(name = "actors")
+//    String film_actors;
 
     public Film(int filmId, String film_title, String film_desc, int film_year,
                 int film_lang, int film_rentDur, double film_rentRate, int film_length,

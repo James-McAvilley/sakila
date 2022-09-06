@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface FilmCategoryRepository extends CrudRepository<FilmCategories, Integer> {
-    @Query("SELECT Film.title, Category.name FROM Film INNER JOIN Category ON Film.categoryId = Category.categoryId")
-    List<Film> findByCategory(String category);
+//    @Query("SELECT Film.title, Category.name FROM Film INNER JOIN Category ON Film.categoryId = Category.categoryId")
+//    List<Object> findByCategory(String category);
 
 }

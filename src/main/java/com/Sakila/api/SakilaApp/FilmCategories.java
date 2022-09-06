@@ -5,8 +5,9 @@ import javax.persistence.*;
 @Table(name = "film_category")
 @Entity
 public class FilmCategories {
-    @EmbeddedId
-    FilmCategoriesKey Id;
+    @Id
+    @Column(name = "id", nullable = false)
+    private Long id;
 
     @ManyToOne
     @MapsId("filmId")
@@ -18,21 +19,20 @@ public class FilmCategories {
     @JoinColumn(name = "category_id")
     Category category;
 
-    public FilmCategories(FilmCategoriesKey id, Film film, Category category) {
-        Id = id;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public FilmCategories(Film film, Category category) {
         this.film = film;
         this.category = category;
     }
 
     public FilmCategories(){}
-
-    public FilmCategoriesKey getId() {
-        return Id;
-    }
-
-    public void setId(FilmCategoriesKey id) {
-        Id = id;
-    }
 
     public Film getFilm() {
         return film;

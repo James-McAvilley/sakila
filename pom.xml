@@ -57,6 +57,11 @@
 			<version>8.0.25</version>
 		</dependency>
 		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>3.6.3.Final</version>
+		</dependency>
+		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-gherkin</artifactId>
 			<version>7.6.0</version>

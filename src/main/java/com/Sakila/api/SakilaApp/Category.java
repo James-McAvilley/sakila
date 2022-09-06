@@ -2,6 +2,7 @@ package com.Sakila.api.SakilaApp;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "category")
@@ -15,6 +16,10 @@ public class Category {
     String category_name;
     @Column(name = "last_update")
     String category_update;
+
+    @OneToMany(mappedBy = "category")
+    Set<FilmCategories> film_Id;
+
     //Constructors
 
     public Category(int categoryId, String category_name, String category_update){

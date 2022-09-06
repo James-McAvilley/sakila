@@ -1,6 +1,7 @@
 package com.Sakila.api.SakilaApp;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "actor")
@@ -14,6 +15,9 @@ public class Actor {
     String first_name;
     @Column(name = "last_name")
     String last_name;
+
+
+
     //Constructors
     public Actor(int actorId, String first_name, String last_name){
         this.actorId = actorId;
@@ -47,4 +51,7 @@ public class Actor {
     public void setLast_name(String last_name) {
         this.last_name = last_name;
     }
+
+
+
 }

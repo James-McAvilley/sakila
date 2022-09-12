@@ -37,15 +37,15 @@ public class Film {
     @Column(name = "rating")
     String film_rating;
 
-    @Column(name = "category_id")
-    int categoryId;
+//    @Column(name = "category_id")
+//    int categoryId;
 
 //    @Column(name = "actors")
 //    String film_actors;
 
     public Film(int filmId, String film_title, String film_desc, int film_year,
                 int film_lang, int film_rentDur, double film_rentRate, int film_length,
-                double replacement_cost, String film_rating, int categoryId){
+                double replacement_cost, String film_rating){
         this.filmId = filmId;
         this.film_title = film_title;
         this.film_desc = film_desc;
@@ -56,7 +56,7 @@ public class Film {
         this.replacement_cost = replacement_cost;
         this.film_length = film_length;
         this.film_rating = film_rating;
-        this.categoryId = categoryId;
+        //this.categoryId = categoryId;
     };
     public Film(){};
 
@@ -140,7 +140,7 @@ public class Film {
         this.film_rating = film_rating;
     }
 
-    public int getCategoryId() { return categoryId; }
-
-    public void setCategoryId(int categoryId) { this.categoryId = categoryId; }
+//    public int getCategoryId() { return categoryId; }
+//
+//    public void setCategoryId(int categoryId) { this.categoryId = categoryId; }
 }

@@ -21,13 +21,12 @@ public class SakilaAppApplication {
 	private ActorRepository actorRepository;
 	private FilmRepository filmRepository;
 	private CategoryRepository categoryRepository;
-	private FilmCategoryRepository filmCategoryRepository;
 
-	public SakilaAppApplication(ActorRepository actorRepository, FilmRepository filmRepository, CategoryRepository categoryRepository, FilmCategoryRepository filmCategoryRepository) {
+
+	public SakilaAppApplication(ActorRepository actorRepository, FilmRepository filmRepository, CategoryRepository categoryRepository) {
 		this.actorRepository = actorRepository;
 		this.filmRepository = filmRepository;
 		this.categoryRepository = categoryRepository;
-		this.filmCategoryRepository = filmCategoryRepository;
 	}
 
 	public static void main(String[] args) {
@@ -52,27 +51,10 @@ public class SakilaAppApplication {
 		return categoryRepository.findAll();
 	}
 
-	@GetMapping("/allFilmCategories")
+	@GetMapping("/findActorId/{id}")
 	public @ResponseBody
-	Iterable<FilmCategories> getAllFilmCategories(){
-		return filmCategoryRepository.findAll();
-	}
-
-
-//	@PutMapping("/AddActor")
-//	@ResponseBody
-//	Optional<Actor> addActor(@RequestParam Integer id, @RequestParam String first_name, @RequestParam String last_name){
-//		Actor actor = actorRepository.findById(id).get();
-//		actor.first_name = first_name;
-//		actor.last_name = last_name;
-//		actorRepository.save(actor);
-//		return actorRepository.findById(id);
-//	}
-
-	@GetMapping("/Actor/{id}")
-	public @ResponseBody
-	Optional<Actor> getActor(@PathVariable Integer id){
-		return actorRepository.findById(id);
+	List<Actor> getByActorId(@PathVariable Integer id){
+		return actorRepository.findActorId(id);
 	}
 
 	@GetMapping("/Film/{id}")
@@ -87,22 +69,26 @@ public class SakilaAppApplication {
 		return actorRepository.findByFirstName(first_name);
 	}
 
-	@GetMapping("/AllFilmCategories")
+	@GetMapping("/getFilmTitle/{filmTitle}")
 	public @ResponseBody
-	Iterable<FilmCategories> getFilmCategory(){
-		return filmCategoryRepository.findAll();
-	}
+	List<Film> getByTitle(@PathVariable String filmTitle){ return filmRepository.findByTitle(filmTitle);}
 
-
-
-	@GetMapping("/filmsByBudget/{budget}")
+	@GetMapping("/filmByBudget/{budget}")
 	public @ResponseBody
 	List<Film> getByBudget(@PathVariable double budget) { return filmRepository.findByBudget(budget); }
 
-	@GetMapping("/getByCategory/{id}")
+	@GetMapping("/filmByDuration/{duration}")
 	public @ResponseBody
-	Iterable<Film> getByCategory(@PathVariable Integer id){
-		return filmRepository.findByCategory(id);
+	List<Film> getByDuration(@PathVariable int duration) { return filmRepository.findByDuration(duration); }
+
+	@GetMapping("/filmByAll/{budget}/{duration}")
+	public @ResponseBody
+	List<Film> getByAll(@PathVariable double budget, @PathVariable int duration) { return filmRepository.findByAll(budget, duration); }
+
+	@GetMapping("/categoryFilm/{id}")
+	@ResponseBody
+	public Iterable<Film> getCategoryFilm(@PathVariable String id){
+		return filmRepository.getCategoryFilm(id);
 	}
 
 	//A change for a commit

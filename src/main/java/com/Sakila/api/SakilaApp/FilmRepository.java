@@ -18,14 +18,17 @@ public interface FilmRepository extends CrudRepository<Film, Integer> {
     @Query("FROM Film WHERE rental_rate < ?1")
     List<Film> findByBudget(double budget);
 
-    @Query(value = "SELECT Film.film_id, Film.title, Film.description, Film.release_year\n" +
-            "Film.language_id, Film.rental_duration, Film.rental_rate, Film.length, Film.replacement_cost\n" +
-            "Film.rating, Film.category_id FROM sakila.film\n" +
-            "INNER JOIN film_category ON film_category.category_id = category.category_id\n" +
-            "INNER JOIN film ON film.film_id = film_category.film_id\n" +
-            "WHERE film.film_id = :id ;",
-            nativeQuery = true)
-    Iterable<Film> findByCategory(@Param("id") Integer id);
+    @Query("FROM Film WHERE length <= ?1")
+    List<Film> findByDuration(int duration);
+
+    @Query("FROM Film WHERE rental_rate < ?1 AND length <= ?2")
+    List<Film> findByAll(double budget, int duration);
+
+    @Query(nativeQuery = true, value = "SELECT film.* FROM film INNER JOIN film_category ON film.film_id = film_category.film_id INNER JOIN category ON film_category.category_id = category.category_id WHERE category.name = :id")
+    Iterable<Film> getCategoryFilm(@PathVariable String id);
+
+    @Query(nativeQuery = true, value = "SELECT film.* FROM Film WHERE film.title LIKE  :Title%" )
+    List<Film> findByTitle(@PathVariable String Title);
 
 
 }

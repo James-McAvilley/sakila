@@ -17,9 +17,6 @@ public class Category {
     @Column(name = "last_update")
     String category_update;
 
-    @OneToMany(mappedBy = "category")
-    Set<FilmCategories> film_Id;
-
     //Constructors
 
     public Category(int categoryId, String category_name, String category_update){

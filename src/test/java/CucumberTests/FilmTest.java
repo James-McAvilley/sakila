@@ -3,14 +3,12 @@ package CucumberTests;
 import com.Sakila.api.SakilaApp.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 
-import java.util.Optional;
 
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
-public class FilmTest {
+
+class FilmTest {
     Film tester = new Film();
     private ActorRepository actorRepository;
     private FilmRepository filmRepository;
@@ -41,62 +39,92 @@ public class FilmTest {
 
     @Test
     void GetFilmTitle() {
-        tester.getFilm_title();
+        tester.getFilmTitle();
     }
 
     @Test
     void SetFilmTitle() {
-        tester.setFilm_title("Test title");
+        tester.setFilmTitle("Test title");
     }
 
     @Test
     void GetFilmDescription() {
-        tester.getFilm_desc();
+        tester.getFilmDesc();
     }
 
     @Test
     void SetFilmDescription() {
-        tester.setFilm_desc("Test Description");
+        tester.setFilmDesc("Test Description");
     }
 
     @Test
     void GetFilmYear() {
-        tester.getFilm_year();
+        tester.getFilmYear();
     }
 
     @Test
     void SetFilmYear() {
-        tester.setFilm_year(2006);
+        tester.setFilmYear(2006);
     }
 
     @Test
     void GetFilmLanguage() {
-        tester.getFilm_lang();
+        tester.getFilmLang();
     }
 
     @Test
     void SetFilmLanguage() {
-        tester.setFilm_lang(1);
+        tester.setFilmLang(1);
     }
 
     @Test
     void GetFilmRentDuration() {
-        tester.getFilm_rentDur();
+        tester.getFilmRentDur();
     }
 
     @Test
     void SetFilmRentDuration() {
-        tester.setFilm_rentDur(7);
+        tester.setFilmRentDur(7);
     }
 
     @Test
     void GetFilmRentRate() {
-        tester.getFilm_rentRate();
+        tester.getFilmRentRate();
     }
 
     @Test
     void SetFilmRentRate() {
-        tester.setFilm_rentRate(4.99);
+        tester.setFilmRentRate(4.99);
+    }
+
+    @Test
+    void GetFilmLength() {
+        tester.getFilmLength();
+    }
+
+    @Test
+    void SetFilmLength() {
+        tester.setFilmLength(60);
+    }
+
+    @Test
+    void GetReplacementCost() {
+        tester.getReplacementCost();
+    }
+
+    @Test
+    void SetReplacementCost() {
+        tester.setReplacementCost(10);
+    }
+
+    @Test
+    void GetFilmRating() {
+        tester.getFilmRating();
+    }
+
+    @Test
+    void SetFilmRating() {
+        tester.setFilmRating("PG");
     }
 
 }

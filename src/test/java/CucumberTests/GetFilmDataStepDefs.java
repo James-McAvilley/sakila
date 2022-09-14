@@ -63,7 +63,7 @@ public class GetFilmDataStepDefs {
         int id = 1;
         expected = new Film();
         expected.setFilmId(1);
-        expected.setFilm_title("I'M A TEST");
+        expected.setFilmTitle("I'M A TEST");
     }
     @Given("The ID has a movie in the database")
     public void the_id_has_a_movie_in_the_database() {

@@ -31,6 +31,11 @@ public class FilmTest {
 
     @Test
     void GetFilmId(){
+        tester.getFilmId();
+    }
+
+    @Test
+    void SetFilmId(){
         tester.setFilmId(1);
     }
 }

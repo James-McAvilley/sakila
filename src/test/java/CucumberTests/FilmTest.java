@@ -59,4 +59,44 @@ public class FilmTest {
         tester.setFilm_desc("Test Description");
     }
 
+    @Test
+    void GetFilmYear() {
+        tester.getFilm_year();
+    }
+
+    @Test
+    void SetFilmYear() {
+        tester.setFilm_year(2006);
+    }
+
+    @Test
+    void GetFilmLanguage() {
+        tester.getFilm_lang();
+    }
+
+    @Test
+    void SetFilmLanguage() {
+        tester.setFilm_lang(1);
+    }
+
+    @Test
+    void GetFilmRentDuration() {
+        tester.getFilm_rentDur();
+    }
+
+    @Test
+    void SetFilmRentDuration() {
+        tester.setFilm_rentDur(7);
+    }
+
+    @Test
+    void GetFilmRentRate() {
+        tester.getFilm_rentRate();
+    }
+
+    @Test
+    void SetFilmRentRate() {
+        tester.setFilm_rentRate(4.99);
+    }
+
 }

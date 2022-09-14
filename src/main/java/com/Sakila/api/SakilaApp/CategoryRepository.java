@@ -3,8 +3,10 @@ package com.Sakila.api.SakilaApp;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.persistence.ManyToMany;
+import java.util.List;
 import java.util.Set;
 
 public interface CategoryRepository extends CrudRepository<Category, Integer>{
@@ -16,5 +18,8 @@ public interface CategoryRepository extends CrudRepository<Category, Integer>{
             "WHERE film.film_id = :id ;",
             nativeQuery = true)
     Iterable<Film> findByCategory(@Param("id") Integer id);
+
+    @Query("FROM Category WHERE category_id = ?1")
+    List<Category> findCategoryId(@PathVariable Integer category_id);
 
 }

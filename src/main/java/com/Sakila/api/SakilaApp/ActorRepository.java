@@ -8,10 +8,13 @@ import java.util.List;
 
 public interface ActorRepository extends CrudRepository<Actor, Integer> {
 
-    @Query("FROM Actor WHERE first_name = ?1")
-    List<Actor> findByFirstName(String first_name);
+    @Query(nativeQuery = true, value =" SELECT actor.* FROM Actor WHERE actor.first_name LIKE :Name%")
+    List<Actor> findByFirstName(String Name);
 
     @Query("FROM Actor WHERE actor_id = ?1")
     List<Actor> findActorId(@PathVariable Integer actor_id);
+
+//    @Query("INSERT INTO actor (first_name, last_name VALUES (?firstName, ?lastName")
+//    Object<Actor> addActor(@PathVariable String firstName, @PathVariable String lastName);
 
 }

@@ -57,6 +57,12 @@ public class SakilaAppApplication {
 		return actorRepository.findActorId(id);
 	}
 
+	@GetMapping("/findCategoryId/{id}")
+	public @ResponseBody
+	List<Category> getByCategoryId(@PathVariable Integer id){
+		return categoryRepository.findCategoryId(id);
+	}
+
 	@GetMapping("/Film/{id}")
 	public @ResponseBody
 	Optional<Film> getFilm(@PathVariable Integer id){
@@ -90,6 +96,26 @@ public class SakilaAppApplication {
 	public Iterable<Film> getCategoryFilm(@PathVariable String id){
 		return filmRepository.getCategoryFilm(id);
 	}
+
+//	@PostMapping("/addActor")
+//	@ResponseBody
+//	public String addActor(@RequestBody Actor actor)
+//	{
+//		actorRepository.save(actor);
+//		return ("Actor added");
+//	}
+
+//	//Edit the information of an actor selected by the ID passed
+//	@PutMapping("/editActor/{id}")
+//	@ResponseBody
+//	public String editActor(@PathVariable Integer id, @RequestBody Actor newAct)
+//	{
+//		final Actor actor = actorRepository.findById(id).get();
+//		actor.setFirstName(newAct.firstName);
+//		actor.setLastName(newAct.lastName);
+//		actorRepository.save(actor);
+//		return("Actor Edited");
+//	}
 
 	//A change for a commit
 }

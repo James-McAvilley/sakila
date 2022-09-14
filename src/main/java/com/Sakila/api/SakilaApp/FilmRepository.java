@@ -27,7 +27,7 @@ public interface FilmRepository extends CrudRepository<Film, Integer> {
     @Query(nativeQuery = true, value = "SELECT film.* FROM film INNER JOIN film_category ON film.film_id = film_category.film_id INNER JOIN category ON film_category.category_id = category.category_id WHERE category.name = :id")
     Iterable<Film> getCategoryFilm(@PathVariable String id);
 
-    @Query(nativeQuery = true, value = "SELECT film.* FROM Film WHERE film.title LIKE  :Title%" )
+    @Query(nativeQuery = true, value = "SELECT film.* FROM Film WHERE film.title LIKE :Title%" )
     List<Film> findByTitle(@PathVariable String Title);
 
 

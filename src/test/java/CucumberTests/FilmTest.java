@@ -38,4 +38,25 @@ public class FilmTest {
     void SetFilmId(){
         tester.setFilmId(1);
     }
+
+    @Test
+    void GetFilmTitle() {
+        tester.getFilm_title();
+    }
+
+    @Test
+    void SetFilmTitle() {
+        tester.setFilm_title("Test title");
+    }
+
+    @Test
+    void GetFilmDescription() {
+        tester.getFilm_desc();
+    }
+
+    @Test
+    void SetFilmDescription() {
+        tester.setFilm_desc("Test Description");
+    }
+
 }

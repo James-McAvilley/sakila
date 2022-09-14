@@ -11,7 +11,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class FilmTest {
-
+    Film tester = new Film();
     private ActorRepository actorRepository;
     private FilmRepository filmRepository;
     private CategoryRepository categoryRepository;
@@ -27,5 +27,10 @@ public class FilmTest {
     @Test
     void GetFilm(){
         Film testFilm = new Film();
+    }
+
+    @Test
+    void GetFilmId(){
+        tester.setFilmId(1);
     }
 }

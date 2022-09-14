@@ -1,10 +1,9 @@
 package CucumberTests;
 
-import com.Sakila.api.SakilaApp.Film;
-import com.Sakila.api.SakilaApp.FilmRepository;
-import com.Sakila.api.SakilaApp.SakilaAppApplication;
+import com.Sakila.api.SakilaApp.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 
 import java.util.Optional;
 
@@ -13,13 +12,16 @@ import static org.mockito.Mockito.when;
 
 public class FilmTest {
     Film testFilm = new Film();
-    FilmRepository filmRepository;
+    private ActorRepository actorRepository;
+    private FilmRepository filmRepository;
+    private CategoryRepository categoryRepository;
     SakilaAppApplication sakilaAppApplication;
 
-    public FilmTest(Film testFilm, FilmRepository filmRepository, SakilaAppApplication sakilaAppApplication) {
-        this.testFilm = testFilm;
-        this.filmRepository = filmRepository;
-        this.sakilaAppApplication = sakilaAppApplication;
+    public FilmTest(){
+        actorRepository = mock(ActorRepository.class);
+        filmRepository = mock(FilmRepository.class);
+        categoryRepository = mock(CategoryRepository.class);
+        sakilaAppApplication = new SakilaAppApplication(actorRepository, filmRepository, categoryRepository);
     }
 
     @Test

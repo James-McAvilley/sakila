@@ -56,6 +56,6 @@ public class GetActorDataStepDefs {
     }
     @Then("Return the correct actor data")
     public void return_the_correct_data() {
-        Assertions.assertEquals(expected, testActor, "incorrect film");
+        Assertions.assertEquals(expected, testActor, "incorrect actor");
     }
 }

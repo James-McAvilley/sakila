@@ -53,8 +53,8 @@ public class GetCategoryDataStepDefs {
         testCategory = categoryRepository.findById(1).get();
     }
 
-    @Then("Return the correct actor data")
+    @Then("Return the correct Category data")
     public void return_the_correct_data() {
-        Assertions.assertEquals(expected, testCategory, "incorrect film");
+        Assertions.assertEquals(expected, testCategory, "incorrect category");
     }
 }

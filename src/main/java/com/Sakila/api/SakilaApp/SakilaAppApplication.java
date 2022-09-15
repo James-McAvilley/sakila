@@ -94,6 +94,25 @@ public class SakilaAppApplication {
 		return filmRepository.getCategoryFilm(id);
 	}
 
+	@PostMapping("/addActor")
+	@ResponseBody
+	public String addActor(@RequestBody Actor actor)
+	{
+		actorRepository.save(actor);
+		return ("Actor added");
+	}
+
+	//Edit the information of an actor selected by the ID passed
+	@PutMapping("/editActor/{id}")
+	@ResponseBody
+	public String editActor(@PathVariable Integer id, @RequestBody Actor newAct)
+	{
+		final Actor actor = actorRepository.findById(id).get();
+		actor.setFirstName(newAct.firstName);
+		actor.setLastName(newAct.lastName);
+		actorRepository.save(actor);
+		return("Actor Edited");
+	}
 
 	//A change for a commit
 }

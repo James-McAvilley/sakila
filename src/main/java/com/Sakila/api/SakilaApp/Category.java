@@ -39,16 +39,16 @@ public class Category {
         return categoryName;
     }
 
-    public void setCategoryName(String category_name) {
-        this.categoryName = category_name;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     public String getCategoryUpdate() {
         return categoryUpdate;
     }
 
-    public void setCategoryUpdate(String category_update) {
-        this.categoryUpdate = category_update;
+    public void setCategoryUpdate(String categoryUpdate) {
+        this.categoryUpdate = categoryUpdate;
     }
 
     @Override

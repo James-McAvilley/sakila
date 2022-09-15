@@ -18,6 +18,6 @@ public interface CategoryRepository extends CrudRepository<Category, Integer>{
     Iterable<Film> findByCategory(@Param("id") Integer id);
 
     @Query("FROM Category WHERE category_id = ?1")
-    Optional<Category> findCategoryId(@PathVariable Integer category_id);
+    Optional<Category> findCategoryId(@PathVariable Integer categoryId);
 
 }

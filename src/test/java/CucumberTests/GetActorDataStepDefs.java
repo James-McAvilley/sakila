@@ -42,7 +42,7 @@ public class GetActorDataStepDefs {
         int id = 1;
         expected = new Actor();
         expected.setActorId(1);
-        expected.setFirst_name("I'M A TEST");
+        expected.setFirstName("I'M A TEST");
     }
     @Given("The ID has a Actor in the database")
     public void the_id_has_a_movie_in_the_database() {

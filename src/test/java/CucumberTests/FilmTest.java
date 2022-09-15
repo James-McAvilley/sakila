@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
 
@@ -20,6 +21,23 @@ class FilmTest {
         filmRepository = mock(FilmRepository.class);
         categoryRepository = mock(CategoryRepository.class);
         sakilaAppApplication = new SakilaAppApplication(actorRepository, filmRepository, categoryRepository);
+    }
+
+    Film testFilm = new Film(1, "Test", "Test", 1, 1, 1, 1.0, 1, 1, "Test");
+
+    @Test
+    void FilmConstructor() {
+        Film tempFilm = new Film(1, "Test", "Test", 1, 1, 1, 1.0, 1, 1, "Test");
+        assertEquals(tempFilm.getFilmId(), tempFilm.getFilmId(), "Id failed");
+        assertEquals(tempFilm.getFilmTitle(), tempFilm.getFilmTitle(), "Title failed");
+        assertEquals(tempFilm.getFilmDesc(), testFilm.getFilmDesc(), "Description failed");
+        assertEquals(tempFilm.getFilmYear(), testFilm.getFilmYear(), "Year failed");
+        assertEquals(tempFilm.getFilmLang(), testFilm.getFilmLang(), "Language failed");
+        assertEquals(tempFilm.getFilmRentDur(), testFilm.getFilmRentDur(), "Rent duration failed");
+        assertEquals(tempFilm.getFilmRentRate(), tempFilm.getFilmRentRate(), "Rent rate failed");
+        assertEquals(tempFilm.getReplacementCost(), testFilm.getReplacementCost(), "Replacement cost failed");
+        assertEquals(tempFilm.getFilmLength(), testFilm.getFilmLength(), "Length failed");
+        assertEquals(tempFilm.getFilmRating(), testFilm.getFilmRating(), "Rating failed");
     }
 
     @Test

@@ -41,10 +41,6 @@ class SakilaAppTest {
     public void applicationContextLoaded() {
     }
 
-    @Test
-    public void applicationContextTest() {
-        SakilaAppApplication.main(new String[] {});
-    }
 
     @Test
     public void testEquals_SymmetricFilm() {

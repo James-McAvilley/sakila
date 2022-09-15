@@ -39,13 +39,21 @@ class SakilaAppTest {
         sakilaAppApplication = new SakilaAppApplication(actorRepository, filmRepository, categoryRepository);
     }
 
+//    @Test
+//    void GetActorById() {
+//        Actor testActor = new Actor();
+//        when(actorRepository.findById(1)).thenReturn(Optional.of(testActor));
+//        Optional<Actor> actor = sakilaAppApplication.getByActorId(1);
+//        Actor expected = testActor;
+//        Actor actual = actor.get();
+//        Assertions.assertEquals(expected, actual, "Error");
+//    }
+
     @Test
-    void GetActorById() {
-        Actor testActor = new Actor();
-        when(actorRepository.findById(1)).thenReturn(Optional.of(testActor));
-        Optional<Actor> actor = actorRepository.findById(1);
-        Actor expected = testActor;
-        Actor actual = actor.get();
-        Assertions.assertEquals(expected, actual, "Error");
+    void testGetAnActor(){
+        when(actorRepository.findById(1)).thenReturn(Optional.of(new Actor()));
+        Actor output = actorRepository.findById(1).get();
+        Actor expected = new Actor();
+        Assertions.assertEquals(expected, output, "why nay");
     }
 }

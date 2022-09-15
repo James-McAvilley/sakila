@@ -36,8 +36,11 @@ class SakilaAppTest {
         sakilaAppApplication = new SakilaAppApplication(actorRepository, filmRepository, categoryRepository);
     }
 
+    @Mock
     Actor testActor = new Actor(1, "Test", "TestFace");
+    @Mock
     Film testFilm = new Film(1, "Test", "Test", 1, 1, 1, 1.0, 1, 1, "Test");
+    @Mock
     Category testCategory = new Category(1, "Test", "Tester");
 
     @Test
@@ -80,6 +83,7 @@ class SakilaAppTest {
 
     @Test
     void testGetAFilm(){
+        sakilaAppApplication.getByActorId(1);
         when(filmRepository.findById(1)).thenReturn(Optional.of(new Film()));
         Film output = filmRepository.findById(1).get();
         Film expected = new Film();
@@ -109,9 +113,12 @@ class SakilaAppTest {
 //    }
 //    @Test
 //    void getCategoryById() {
-//        int id = 1;
-//        when(categoryRepository.findById(id)).thenReturn(findById());
-//        assertEquals(categoryRepository.findByCategory(id), id, "Error");
+//        Category sampleCategory = new Category();
+//        sampleCategory = new Category();
+//        sampleCategory.setCategoryId(1);
+//        //when(categoryRepository.findCategoryId(sampleCategory)).thenReturn(sakilaAppApplication.getByCategoryId(sampleCategory.getCategoryId()));
+//        when(sakilaAppApplication.getByCategoryId(1)).thenReturn(Optional.of(sampleCategory));
+//        assertEquals(1, testCategory.getCategoryId(), "Error");
 //    }
 
 //    @Test

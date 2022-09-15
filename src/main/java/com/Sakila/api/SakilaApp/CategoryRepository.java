@@ -5,9 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import javax.persistence.ManyToMany;
-import java.util.List;
-import java.util.Set;
+import java.util.Optional;
 
 public interface CategoryRepository extends CrudRepository<Category, Integer>{
     @Query(value = "SELECT Film.film_id, Film.title, Film.description, Film.release_year\n" +
@@ -20,6 +18,6 @@ public interface CategoryRepository extends CrudRepository<Category, Integer>{
     Iterable<Film> findByCategory(@Param("id") Integer id);
 
     @Query("FROM Category WHERE category_id = ?1")
-    List<Category> findCategoryId(@PathVariable Integer category_id);
+    Optional<Category> findCategoryId(@PathVariable Integer category_id);
 
 }

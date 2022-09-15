@@ -97,12 +97,11 @@ public class SakilaAppApplication {
 		return filmRepository.getCategoryFilm(id);
 	}
 
-//	@PostMapping("/addActor")
+//	@PutMapping("/addActor/{id}")
 //	@ResponseBody
-//	public String addActor(@RequestBody Actor actor)
+//	public String updateActor(@RequestBody Actor newActor)
 //	{
-//		actorRepository.save(actor);
-//		return ("Actor added");
+//
 //	}
 
 //	//Edit the information of an actor selected by the ID passed

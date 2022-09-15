@@ -50,6 +50,16 @@ class SakilaAppTest {
 //    }
 
     @Test
+    public void testEquals_Symmetric() {
+        Film x = new Film();  // equals and hashCode check name field value
+        Film y = new Film();
+        x.setFilmTitle("1");
+        y.setFilmTitle("1");
+        Assertions.assertTrue(x.equals(y) && y.equals(x));
+        Assertions.assertTrue(x.hashCode() == y.hashCode());
+    }
+
+    @Test
     void testGetAnActor(){
         when(actorRepository.findById(1)).thenReturn(Optional.of(new Actor()));
         Actor output = actorRepository.findById(1).get();

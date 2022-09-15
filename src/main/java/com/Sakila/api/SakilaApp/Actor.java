@@ -52,16 +52,16 @@ public class Actor {
         this.last_name = last_name;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Actor actor = (Actor) o;
-        return actorId == actor.actorId && Objects.equals(first_name, actor.first_name) && Objects.equals(last_name, actor.last_name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(actorId, first_name, last_name);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Actor actor = (Actor) o;
+//        return actorId == actor.actorId && Objects.equals(first_name, actor.first_name) && Objects.equals(last_name, actor.last_name);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(actorId, first_name, last_name);
+//    }
 }

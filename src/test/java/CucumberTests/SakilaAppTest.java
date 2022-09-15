@@ -1,41 +1,51 @@
 package CucumberTests;
 
-import com.Sakila.api.SakilaApp.ActorRepository;
-import com.Sakila.api.SakilaApp.CategoryRepository;
-import com.Sakila.api.SakilaApp.FilmRepository;
-import com.Sakila.api.SakilaApp.SakilaAppApplication;
+import com.Sakila.api.SakilaApp.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
+
+import java.util.List;
+import java.util.Optional;
 
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
-@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 class SakilaAppTest {
 
-    @Autowired
-    private ActorRepository actorRepository;
-    private FilmRepository filmRepository;
-    private CategoryRepository categoryRepository;
-    SakilaAppApplication sakilaAppApplication;
+    @Mock
+    ActorRepository actorRepository;
 
-    public SakilaAppTest(){
-        actorRepository = mock(ActorRepository.class);
-        filmRepository = mock(FilmRepository.class);
-        categoryRepository = mock(CategoryRepository.class);
+    @Mock
+    FilmRepository filmRepository;
+
+    @Mock
+    CategoryRepository categoryRepository;
+
+    private SakilaAppApplication sakilaAppApplication;
+
+    @BeforeEach
+    void SakilaAppTest(){
         sakilaAppApplication = new SakilaAppApplication(actorRepository, filmRepository, categoryRepository);
     }
 
-//    @Test
-//    void GetAllActors() {
-//        assertNotNull(actorRepository.findAll());
-//    }
-//
     @Test
-    void GetActorById(Integer id) {
-        id = 1;
-        assertNotNull(actorRepository.findActorId(id));
+    void GetActorById() {
+        Actor testActor = new Actor();
+        when(actorRepository.findById(1)).thenReturn(Optional.of(testActor));
+        Optional<Actor> actor = actorRepository.findById(1);
+        Actor expected = testActor;
+        Actor actual = actor.get();
+        Assertions.assertEquals(expected, actual, "Error");
     }
 }

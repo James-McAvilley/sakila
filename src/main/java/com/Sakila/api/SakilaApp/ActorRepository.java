@@ -5,6 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ActorRepository extends CrudRepository<Actor, Integer> {
 
@@ -12,9 +13,9 @@ public interface ActorRepository extends CrudRepository<Actor, Integer> {
     List<Actor> findByFirstName(String Name);
 
     @Query("FROM Actor WHERE actor_id = ?1")
-    List<Actor> findActorId(@PathVariable Integer actor_id);
+    Optional<Actor> findActorId(@PathVariable Integer actor_id);
 
-//    @Query("INSERT INTO actor (first_name, last_name VALUES (?firstName, ?lastName")
-//    Object<Actor> addActor(@PathVariable String firstName, @PathVariable String lastName);
+    @Query("INSERT INTO actor (first_name, last_name VALUES (?firstName, ?lastName")
+    List<Actor> addActor(@PathVariable String firstName, @PathVariable String lastName);
 
 }

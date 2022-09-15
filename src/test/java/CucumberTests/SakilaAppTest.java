@@ -76,6 +76,7 @@ class SakilaAppTest {
     @Test
     void testGetAnActor(){
         sakilaAppApplication.getByActorId(1);
+        sakilaAppApplication.getByFirstName("Test");
         when(actorRepository.findById(1)).thenReturn(Optional.of(new Actor()));
         Actor output = actorRepository.findById(1).get();
         Actor expected = new Actor();
@@ -85,6 +86,9 @@ class SakilaAppTest {
     @Test
     void testGetAFilm(){
         sakilaAppApplication.getByFilmId(1);
+        sakilaAppApplication.getByTitle("Test");
+        sakilaAppApplication.getByBudget(5);
+        sakilaAppApplication.getByDuration(90);
         when(filmRepository.findById(1)).thenReturn(Optional.of(new Film()));
         Film output = filmRepository.findById(1).get();
         Film expected = new Film();
@@ -99,6 +103,7 @@ class SakilaAppTest {
         Category expected = new Category();
         Assertions.assertEquals(expected, output, "Error");
     }
+
 
 
 //    @Test

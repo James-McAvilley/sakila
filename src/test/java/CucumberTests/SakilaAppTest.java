@@ -33,9 +33,9 @@ class SakilaAppTest {
 //        assertNotNull(actorRepository.findAll());
 //    }
 //
-//    @Test
-//    void GetActorById(Integer id) {
-//        id = 1;
-//        assertNotNull(actorRepository.findActorId(id));
-//    }
+    @Test
+    void GetActorById(Integer id) {
+        id = 1;
+        assertNotNull(actorRepository.findActorId(id));
+    }
 }

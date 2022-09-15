@@ -35,19 +35,19 @@ public class Category {
         this.categoryId = categoryId;
     }
 
-    public String getCategory_name() {
+    public String getCategoryName() {
         return category_name;
     }
 
-    public void setCategory_name(String category_name) {
+    public void setCategoryName(String category_name) {
         this.category_name = category_name;
     }
 
-    public String getCategory_update() {
+    public String getCategoryUpdate() {
         return category_update;
     }
 
-    public void setCategory_update(String last_update) {
+    public void setCategoryUpdate(String last_update) {
         this.category_update = category_update;
     }
 };

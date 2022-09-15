@@ -39,7 +39,7 @@ public class GetCategoryDataStepDefs {
         int id = 1;
         expected = new Category();
         expected.setCategoryId(1);
-        expected.setCategory_name("I'M A TEST");
+        expected.setCategoryName("I'M A TEST");
     }
 
     @Given("The ID has a Category in the database")

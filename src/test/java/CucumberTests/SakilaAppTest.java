@@ -13,13 +13,13 @@ import static org.mockito.Mockito.mock;
 
 @SpringBootTest
 class SakilaAppTest {
+
+    @Autowired
     private ActorRepository actorRepository;
     private FilmRepository filmRepository;
     private CategoryRepository categoryRepository;
     SakilaAppApplication sakilaAppApplication;
 
-
-    @Autowired
     public SakilaAppTest(){
         actorRepository = mock(ActorRepository.class);
         filmRepository = mock(FilmRepository.class);

@@ -12,17 +12,17 @@ public class Actor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int actorId;
     @Column(name = "first_name")
-    String first_name;
+    String firstName;
     @Column(name = "last_name")
-    String last_name;
+    String lastName;
 
 
 
     //Constructors
-    public Actor(int actorId, String first_name, String last_name){
+    public Actor(int actorId, String firstName, String lastName){
         this.actorId = actorId;
-        this.first_name = first_name;
-        this.last_name = last_name;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
     public Actor(){}
 
@@ -37,19 +37,19 @@ public class Actor {
     }
 
     public String getFirstName() {
-        return first_name;
+        return firstName;
     }
 
     public void setFirstName(String first_name) {
-        this.first_name = first_name;
+        this.firstName = first_name;
     }
 
     public String getLastName() {
-        return last_name;
+        return lastName;
     }
 
     public void setLastName(String last_name) {
-        this.last_name = last_name;
+        this.lastName = last_name;
     }
 
     @Override
@@ -57,11 +57,11 @@ public class Actor {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Actor actor = (Actor) o;
-        return actorId == actor.actorId && Objects.equals(first_name, actor.first_name) && Objects.equals(last_name, actor.last_name);
+        return actorId == actor.actorId && Objects.equals(firstName, actor.firstName) && Objects.equals(lastName, actor.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(actorId, first_name, last_name);
+        return Objects.hash(actorId, firstName, lastName);
     }
 }

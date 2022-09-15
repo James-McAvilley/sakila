@@ -5,16 +5,21 @@ import com.Sakila.api.SakilaApp.CategoryRepository;
 import com.Sakila.api.SakilaApp.FilmRepository;
 import com.Sakila.api.SakilaApp.SakilaAppApplication;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
 
-public class SakilaAppTest {
+@SpringBootTest
+class SakilaAppTest {
     private ActorRepository actorRepository;
     private FilmRepository filmRepository;
     private CategoryRepository categoryRepository;
     SakilaAppApplication sakilaAppApplication;
 
+
+    @Autowired
     public SakilaAppTest(){
         actorRepository = mock(ActorRepository.class);
         filmRepository = mock(FilmRepository.class);

@@ -1,6 +1,7 @@
 package com.Sakila.api.SakilaApp;
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -140,7 +141,20 @@ public class Film {
         this.film_rating = film_rating;
     }
 
-//    public int getCategoryId() { return categoryId; }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Film film = (Film) o;
+        return filmId == film.filmId && film_year == film.film_year && film_lang == film.film_lang && film_rentDur == film.film_rentDur && Double.compare(film.film_rentRate, film_rentRate) == 0 && film_length == film.film_length && Double.compare(film.replacement_cost, replacement_cost) == 0 && Objects.equals(film_title, film.film_title) && Objects.equals(film_desc, film.film_desc) && Objects.equals(film_rating, film.film_rating);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(filmId, film_title, film_desc, film_year, film_lang, film_rentDur, film_rentRate, film_length, replacement_cost, film_rating);
+    }
+
+    //    public int getCategoryId() { return categoryId; }
 //
 //    public void setCategoryId(int categoryId) { this.categoryId = categoryId; }
 }

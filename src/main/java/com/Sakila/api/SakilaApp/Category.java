@@ -2,6 +2,7 @@ package com.Sakila.api.SakilaApp;
 
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "category")
@@ -48,6 +49,19 @@ public class Category {
 
     public void setCategoryUpdate(String category_update) {
         this.category_update = category_update;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Category category = (Category) o;
+        return categoryId == category.categoryId && Objects.equals(category_name, category.category_name) && Objects.equals(category_update, category.category_update);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(categoryId, category_name, category_update);
     }
 }
 

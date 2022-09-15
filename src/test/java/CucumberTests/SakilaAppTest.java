@@ -91,6 +91,7 @@ class SakilaAppTest {
         sakilaAppApplication.getByTitle("Test");
         sakilaAppApplication.getByBudget(5);
         sakilaAppApplication.getByDuration(90);
+        sakilaAppApplication.getCategoryFilm("1");
         when(filmRepository.findById(1)).thenReturn(Optional.of(new Film()));
         Film output = filmRepository.findById(1).get();
         Film expected = new Film();

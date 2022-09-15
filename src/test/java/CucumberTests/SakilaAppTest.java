@@ -18,7 +18,7 @@ public class SakilaAppTest {
     }
 
     @Test
-    Iterable<Actor> GetAllActors() {
-        return testActorRepo.findAll();
+    void GetAllActors() {
+        testActorRepo.findAll();
     }
 }

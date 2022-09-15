@@ -11,6 +11,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -32,15 +33,9 @@ class SakilaAppTest {
         sakilaAppApplication = new SakilaAppApplication(actorRepository, filmRepository, categoryRepository);
     }
 
-//    @Test
-//    void GetActorById() {
-//        Actor testActor = new Actor();
-//        when(actorRepository.findById(1)).thenReturn(Optional.of(testActor));
-//        Optional<Actor> actor = sakilaAppApplication.getByActorId(1);
-//        Actor expected = testActor;
-//        Actor actual = actor.get();
-//        Assertions.assertEquals(expected, actual, "Error");
-//    }
+    Actor testActor = new Actor(1, "Test", "TestFace");
+    Film testFilm = new Film(1, "Test", "Test", 1, 1, 1, 1.0, 1, 1, "Test");
+    Category testCategory = new Category(1, "Test", "Tester");
 
     @Test
     public void testEquals_SymmetricFilm() {
@@ -93,6 +88,21 @@ class SakilaAppTest {
         when(categoryRepository.findById(1)).thenReturn(Optional.of(new Category()));
         Category output = categoryRepository.findById(1).get();
         Category expected = new Category();
+        Assertions.assertEquals(expected, output, "Error");
+    }
+
+    @Test
+    void getCategoryById() {
+        assertEquals(1, testCategory.getCategoryId(), "Id failed");
+        assertEquals("Test", testCategory.getCategoryName(), "Name failed");
+        assertEquals("Tester", testCategory.getCategoryUpdate(), "Update failed");
+    }
+
+    @Test
+    void testGetAllActors(){
+        when(actorRepository.findAll()).thenReturn();
+        Actor output = actorRepository.findById(1).get();
+        Actor expected = new Actor();
         Assertions.assertEquals(expected, output, "Error");
     }
 

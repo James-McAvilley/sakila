@@ -6,15 +6,16 @@ import com.Sakila.api.SakilaApp.FilmRepository;
 import com.Sakila.api.SakilaApp.SakilaAppApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
 
 @SpringBootTest
+@AutoConfigureMockMvc
 class SakilaAppTest {
 
-    @Autowired
     private ActorRepository actorRepository;
     private FilmRepository filmRepository;
     private CategoryRepository categoryRepository;

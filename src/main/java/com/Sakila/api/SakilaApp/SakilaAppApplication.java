@@ -65,7 +65,7 @@ public class SakilaAppApplication {
 
 	@GetMapping("/Film/{id}")
 	public @ResponseBody
-	Optional<Film> getFilm(@PathVariable Integer id){
+	Optional<Film> getByFilmId(@PathVariable Integer id){
 		return filmRepository.findById(id);
 	}
 

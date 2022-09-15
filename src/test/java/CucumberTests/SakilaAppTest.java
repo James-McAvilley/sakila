@@ -75,6 +75,7 @@ class SakilaAppTest {
 
     @Test
     void testGetAnActor(){
+        sakilaAppApplication.getByActorId(1);
         when(actorRepository.findById(1)).thenReturn(Optional.of(new Actor()));
         Actor output = actorRepository.findById(1).get();
         Actor expected = new Actor();
@@ -83,7 +84,7 @@ class SakilaAppTest {
 
     @Test
     void testGetAFilm(){
-        sakilaAppApplication.getByActorId(1);
+        sakilaAppApplication.getByFilmId(1);
         when(filmRepository.findById(1)).thenReturn(Optional.of(new Film()));
         Film output = filmRepository.findById(1).get();
         Film expected = new Film();
@@ -92,6 +93,7 @@ class SakilaAppTest {
 
     @Test
     void testGetACategory(){
+        sakilaAppApplication.getByCategoryId(1);
         when(categoryRepository.findById(1)).thenReturn(Optional.of(new Category()));
         Category output = categoryRepository.findById(1).get();
         Category expected = new Category();

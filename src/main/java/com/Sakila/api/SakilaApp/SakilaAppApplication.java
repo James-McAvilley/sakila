@@ -87,9 +87,6 @@ public class SakilaAppApplication {
 	public @ResponseBody
 	List<Film> getByDuration(@PathVariable int duration) { return filmRepository.findByDuration(duration); }
 
-	@GetMapping("/filmByAll/{budget}/{duration}")
-	public @ResponseBody
-	List<Film> getByAll(@PathVariable double budget, @PathVariable int duration) { return filmRepository.findByAll(budget, duration); }
 
 	@GetMapping("/categoryFilm/{id}")
 	@ResponseBody

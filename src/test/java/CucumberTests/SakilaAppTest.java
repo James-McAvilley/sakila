@@ -9,6 +9,9 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -36,11 +39,6 @@ class SakilaAppTest {
     Actor testActor = new Actor(1, "Test", "TestFace");
     Film testFilm = new Film(1, "Test", "Test", 1, 1, 1, 1.0, 1, 1, "Test");
     Category testCategory = new Category(1, "Test", "Tester");
-
-    @Test
-    public void applicationContextLoaded() {
-    }
-
 
     @Test
     public void testEquals_SymmetricFilm() {
@@ -96,6 +94,19 @@ class SakilaAppTest {
         Assertions.assertEquals(expected, output, "Error");
     }
 
+
+//    @Test
+//    void testGetActors() {
+//        Actor testActor1 = new Actor(1, "Tester", "Chester");
+//        Actor testActor2 = new Actor(2, "Tester", "Chester");
+//        Actor testActor3 = new Actor(3, "Tester", "Chester");
+//
+//        Actor[] actors = {testActor1, testActor2, testActor3};
+//
+//        when(sakilaAppApplication.getAllActors()).thenReturn(List.of(actors));
+
+
+//    }
 //    @Test
 //    void getCategoryById() {
 //        int id = 1;

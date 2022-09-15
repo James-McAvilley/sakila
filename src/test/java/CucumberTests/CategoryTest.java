@@ -3,6 +3,7 @@ package CucumberTests;
 import com.Sakila.api.SakilaApp.*;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
 public class CategoryTest {
@@ -17,6 +18,19 @@ public class CategoryTest {
         filmRepository = mock(FilmRepository.class);
         categoryRepository = mock(CategoryRepository.class);
         sakilaAppApplication = new SakilaAppApplication(actorRepository, filmRepository, categoryRepository);
+    }
+
+    Category testCategory = new Category(1, "Testing", "Tester");
+
+    @Test
+    void CategoryConstructor(){
+        Category tempCategory = new Category();
+        tempCategory.setCategoryId(1);
+        tempCategory.setCategoryName("Testing");
+        tempCategory.setCategoryUpdate("Tester");
+        assertEquals(tempCategory.getCategoryId(), testCategory.getCategoryId(), "Id failed");
+        assertEquals(tempCategory.getCategoryName(), testCategory.getCategoryName(), "Name failed");
+        assertEquals(tempCategory.getCategoryUpdate(), testCategory.getCategoryUpdate(), "Update failed");
     }
 
     @Test

@@ -13,9 +13,9 @@ import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
 
 @SpringBootTest
-@AutoConfigureMockMvc
 class SakilaAppTest {
 
+    @Autowired
     private ActorRepository actorRepository;
     private FilmRepository filmRepository;
     private CategoryRepository categoryRepository;
@@ -28,8 +28,14 @@ class SakilaAppTest {
         sakilaAppApplication = new SakilaAppApplication(actorRepository, filmRepository, categoryRepository);
     }
 
-    @Test
-    void GetAllActors() {
-        assertNotNull(actorRepository.findAll());
-    }
+//    @Test
+//    void GetAllActors() {
+//        assertNotNull(actorRepository.findAll());
+//    }
+//
+//    @Test
+//    void GetActorById(Integer id) {
+//        id = 1;
+//        assertNotNull(actorRepository.findActorId(id));
+//    }
 }

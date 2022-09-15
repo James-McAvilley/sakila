@@ -2,7 +2,6 @@ package com.Sakila.api.SakilaApp;
 
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "category")
@@ -23,9 +22,9 @@ public class Category {
         this.categoryId = categoryId;
         this.category_name = category_name;
         this.category_update = category_update;
-    };
+    }
 
-    public Category() {};
+    public Category() {}
 
     public int getCategoryId() {
         return categoryId;
@@ -47,9 +46,9 @@ public class Category {
         return category_update;
     }
 
-    public void setCategoryUpdate(String last_update) {
+    public void setCategoryUpdate(String category_update) {
         this.category_update = category_update;
     }
-};
+}
 
 

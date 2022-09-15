@@ -56,4 +56,21 @@ class SakilaAppTest {
         Actor expected = new Actor();
         Assertions.assertEquals(expected, output, "why nay");
     }
+
+    @Test
+    void testGetAFilm(){
+        when(filmRepository.findById(1)).thenReturn(Optional.of(new Film()));
+        Film output = filmRepository.findById(1).get();
+        Film expected = new Film();
+        Assertions.assertEquals(expected, output, "why nay");
+    }
+
+    @Test
+    void testGetACategory(){
+        when(categoryRepository.findById(1)).thenReturn(Optional.of(new Category()));
+        Category output = categoryRepository.findById(1).get();
+        Category expected = new Category();
+        Assertions.assertEquals(expected, output, "why nay");
+    }
+
 }

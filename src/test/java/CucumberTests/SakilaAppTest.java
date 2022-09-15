@@ -1,10 +1,10 @@
 package CucumberTests;
 
-import com.Sakila.api.SakilaApp.Actor;
-import com.Sakila.api.SakilaApp.ActorRepository;
-import com.Sakila.api.SakilaApp.CategoryRepository;
-import com.Sakila.api.SakilaApp.FilmRepository;
+import com.Sakila.api.SakilaApp.*;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.SpringApplication;
+
+import static org.junit.Assert.assertNotNull;
 
 public class SakilaAppTest {
     ActorRepository testActorRepo;
@@ -19,6 +19,6 @@ public class SakilaAppTest {
 
     @Test
     void GetAllActors() {
-        testActorRepo.findAll();
+        assertNotNull(testActorRepo.findAll());
     }
 }

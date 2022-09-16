@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @SpringBootApplication
@@ -106,6 +107,10 @@ public class SakilaAppApplication {
 	@ResponseBody
 	public String editActor(@PathVariable Integer id, @RequestBody Actor newAct)
 	{
+		Optional<Film> optional = filmRepository.findById(id);
+		if(optional.isEmpty()) {
+			throw new NoSuchElementException();
+		}
 		final Actor actor = this.actorRepository.findById(id).get();
 		actor.setFirstName(newAct.firstName);
 		actor.setLastName(newAct.lastName);

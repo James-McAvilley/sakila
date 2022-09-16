@@ -110,34 +110,6 @@ class SakilaAppTest {
 
 
 
-//    @Test
-//    void testGetActors() {
-//        Actor testActor1 = new Actor(1, "Tester", "Chester");
-//        Actor testActor2 = new Actor(2, "Tester", "Chester");
-//        Actor testActor3 = new Actor(3, "Tester", "Chester");
-//
-//        Actor[] actors = {testActor1, testActor2, testActor3};
-//
-//        when(sakilaAppApplication.getAllActors()).thenReturn(List.of(actors));
 
-
-//    }
-//    @Test
-//    void getCategoryById() {
-//        Category sampleCategory = new Category();
-//        sampleCategory = new Category();
-//        sampleCategory.setCategoryId(1);
-//        //when(categoryRepository.findCategoryId(sampleCategory)).thenReturn(sakilaAppApplication.getByCategoryId(sampleCategory.getCategoryId()));
-//        when(sakilaAppApplication.getByCategoryId(1)).thenReturn(Optional.of(sampleCategory));
-//        assertEquals(1, testCategory.getCategoryId(), "Error");
-//    }
-
-//    @Test
-//    void testGetAllActors(){
-//        when(actorRepository.findAll()).thenReturn();
-//        Actor output = actorRepository.findById(1).get();
-//        Actor expected = new Actor();
-//        Assertions.assertEquals(expected, output, "Error");
-//    }
 
 }

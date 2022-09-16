@@ -36,13 +36,6 @@ class SakilaAppTest {
         sakilaAppApplication = new SakilaAppApplication(actorRepository, filmRepository, categoryRepository);
     }
 
-    @Mock
-    Actor testActor = new Actor(1, "Test", "TestFace");
-    @Mock
-    Film testFilm = new Film(1, "Test", "Test", 1, 1, 1, 1.0, 1, 1, "Test");
-    @Mock
-    Category testCategory = new Category(1, "Test", "Tester");
-
     @Test
     public void testEquals_SymmetricFilm() {
         Film x = new Film();  // equals and hashCode check name field value
@@ -73,6 +66,7 @@ class SakilaAppTest {
         Assertions.assertTrue(x.hashCode() == y.hashCode());
     }
 
+    //Testing getmapping method calls
     @Test
     void testGetAnActor(){
         sakilaAppApplication.getAllActors();

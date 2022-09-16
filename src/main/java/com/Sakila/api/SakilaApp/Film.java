@@ -2,7 +2,6 @@ package com.Sakila.api.SakilaApp;
 
 import javax.persistence.*;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @Table(name = "film")
@@ -38,11 +37,7 @@ public class Film {
     @Column(name = "rating")
     String film_rating;
 
-//    @Column(name = "category_id")
-//    int categoryId;
-
-//    @Column(name = "actors")
-//    String film_actors;
+    //Constructor
 
     public Film(int filmId, String film_title, String film_desc, int film_year,
                 int film_lang, int film_rentDur, double film_rentRate, int film_length,
@@ -57,9 +52,11 @@ public class Film {
         this.replacement_cost = replacement_cost;
         this.film_length = film_length;
         this.film_rating = film_rating;
-        //this.categoryId = categoryId;
+
     };
     public Film(){};
+
+    //Getters and setters
 
     public int getFilmId() {
         return filmId;
@@ -154,7 +151,5 @@ public class Film {
         return Objects.hash(filmId, film_title, film_desc, film_year, film_lang, film_rentDur, film_rentRate, film_length, replacement_cost, film_rating);
     }
 
-    //    public int getCategoryId() { return categoryId; }
-//
-//    public void setCategoryId(int categoryId) { this.categoryId = categoryId; }
+
 }

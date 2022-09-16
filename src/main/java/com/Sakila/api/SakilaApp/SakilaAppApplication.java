@@ -3,11 +3,8 @@ package com.Sakila.api.SakilaApp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -34,6 +31,7 @@ public class SakilaAppApplication {
 		SpringApplication.run(SakilaAppApplication.class, args);
 	}
 
+	//Calls for queries
 	@GetMapping("/allActors")
 	public @ResponseBody
 	Iterable<Actor> getAllActors(){
@@ -118,5 +116,4 @@ public class SakilaAppApplication {
 		return("Actor Edited");
 	}
 
-	//A change for a commit
 }

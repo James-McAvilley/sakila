@@ -70,7 +70,7 @@ public class Film {
         return filmTitle;
     }
 
-    public void setFilmTitle(String filmTtitle) {this.filmTitle = filmTitle;}
+    public void setFilmTitle(String filmTitle) {this.filmTitle = filmTitle;}
 
     public String getFilmDesc() {
         return filmDesc;
@@ -84,7 +84,7 @@ public class Film {
         return filmYear;
     }
 
-    public void setFilmYear(int film_year) {
+    public void setFilmYear(int filmYear) {
         this.filmYear = filmYear;
     }
 

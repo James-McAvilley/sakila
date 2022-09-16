@@ -13,45 +13,45 @@ public class Film {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int filmId;
     @Column(name = "title")
-    String film_title;
+    String filmTitle;
     @Column(name = "description")
-    String film_desc;
+    String filmDesc;
 
     @Column(name = "release_year")
-    int film_year;
+    int filmYear;
 
     @Column(name = "language_id")
-    int film_lang;
+    int filmLang;
 
     @Column(name = "rental_duration")
-    int film_rentDur;
+    int filmRentDur;
 
     @Column(name = "rental_rate")
-    double film_rentRate;
+    double filmRentRate;
     @Column(name = "length")
-    int film_length;
+    int filmLength;
 
     @Column(name = "replacement_cost")
-    double replacement_cost;
+    double replacementCost;
 
     @Column(name = "rating")
-    String film_rating;
+    String filmRating;
 
     //Constructor
 
-    public Film(int filmId, String film_title, String film_desc, int film_year,
-                int film_lang, int film_rentDur, double film_rentRate, int film_length,
-                double replacement_cost, String film_rating){
+    public Film(int filmId, String filmTitle, String filmDesc, int filmYear,
+                int filmLang, int filmRentDur, double filmRentRate, int filmLength,
+                double replacementCost, String filmRating){
         this.filmId = filmId;
-        this.film_title = film_title;
-        this.film_desc = film_desc;
-        this.film_year = film_year;
-        this.film_lang = film_lang;
-        this.film_rentDur = film_rentDur;
-        this.film_rentRate = film_rentRate;
-        this.replacement_cost = replacement_cost;
-        this.film_length = film_length;
-        this.film_rating = film_rating;
+        this.filmTitle = filmTitle;
+        this.filmDesc = filmDesc;
+        this.filmYear = filmYear;
+        this.filmLang = filmLang;
+        this.filmRentDur = filmRentDur;
+        this.filmRentRate = filmRentRate;
+        this.replacementCost = replacementCost;
+        this.filmLength = filmLength;
+        this.filmRating = filmRating;
 
     };
     public Film(){};
@@ -67,75 +67,73 @@ public class Film {
     }
 
     public String getFilmTitle() {
-        return film_title;
+        return filmTitle;
     }
 
-    public void setFilmTitle(String film_title) {
-        this.film_title = film_title;
-    }
+    public void setFilmTitle(String filmTtitle) {this.filmTitle = filmTitle;}
 
     public String getFilmDesc() {
-        return film_desc;
+        return filmDesc;
     }
 
-    public void setFilmDesc(String film_desc) {
-        this.film_desc = film_desc;
+    public void setFilmDesc(String filmDesc) {
+        this.filmDesc = filmDesc;
     }
 
     public int getFilmYear() {
-        return film_year;
+        return filmYear;
     }
 
     public void setFilmYear(int film_year) {
-        this.film_year = film_year;
+        this.filmYear = filmYear;
     }
 
     public int getFilmLang() {
-        return film_lang;
+        return filmLang;
     }
 
-    public void setFilmLang(int film_lang) {
-        this.film_lang = film_lang;
+    public void setFilmLang(int filmLang) {
+        this.filmLang = filmLang;
     }
 
     public int getFilmRentDur() {
-        return film_rentDur;
+        return filmRentDur;
     }
 
-    public void setFilmRentDur(int film_rentDur) {
-        this.film_rentDur = film_rentDur;
+    public void setFilmRentDur(int filmRentDur) {
+        this.filmRentDur = filmRentDur;
     }
 
     public double getFilmRentRate() {
-        return film_rentRate;
+        return filmRentRate;
     }
 
-    public void setFilmRentRate(double film_rentRate) {
-        this.film_rentRate = film_rentRate;
+    public void setFilmRentRate(double filmRentRate) {
+        this.filmRentRate = filmRentRate;
     }
 
     public int getFilmLength() {
-        return film_length;
+        return filmLength;
     }
 
-    public void setFilmLength(int film_length) {
-        this.film_length = film_length;
+    public void setFilmLength(int filmLength) {
+        this.filmLength = filmLength;
     }
 
     public double getReplacementCost() {
-        return replacement_cost;
+        return replacementCost;
     }
 
-    public void setReplacementCost(double replacement_cost) {
-        this.replacement_cost = replacement_cost;
+    public void setReplacementCost(double replacementCost) {
+        this.replacementCost = replacementCost;
     }
 
     public String getFilmRating() {
-        return film_rating;
+        return filmRating;
     }
 
-    public void setFilmRating(String film_rating) {
-        this.film_rating = film_rating;
+    public void setFilmRating(String filmRating) {
+        this.filmRating = filmRating;
     }
 
     @Override
@@ -143,12 +141,12 @@ public class Film {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Film film = (Film) o;
-        return filmId == film.filmId && film_year == film.film_year && film_lang == film.film_lang && film_rentDur == film.film_rentDur && Double.compare(film.film_rentRate, film_rentRate) == 0 && film_length == film.film_length && Double.compare(film.replacement_cost, replacement_cost) == 0 && Objects.equals(film_title, film.film_title) && Objects.equals(film_desc, film.film_desc) && Objects.equals(film_rating, film.film_rating);
+        return filmId == film.filmId && filmYear == film.filmYear && filmLang == film.filmLang && filmRentDur == film.filmRentDur && Double.compare(film.filmRentRate, filmRentRate) == 0 && filmLength == film.filmLength && Double.compare(film.replacementCost, replacementCost) == 0 && Objects.equals(filmTitle, film.filmTitle) && Objects.equals(filmDesc, film.filmDesc) && Objects.equals(filmRating, film.filmRating);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(filmId, film_title, film_desc, film_year, film_lang, film_rentDur, film_rentRate, film_length, replacement_cost, film_rating);
+        return Objects.hash(filmId, filmTitle, filmDesc, filmYear, filmLang, filmRentDur, filmRentRate, filmLength, replacementCost, filmRating);
     }
 
 

@@ -107,7 +107,7 @@ public class SakilaAppApplication {
 	@ResponseBody
 	public String editActor(@PathVariable Integer id, @RequestBody Actor newAct)
 	{
-		Optional<Film> optional = filmRepository.findById(id);
+		Optional<Actor> optional = actorRepository.findById(id);
 		if(optional.isEmpty()) {
 			throw new NoSuchElementException();
 		}
